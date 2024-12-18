@@ -27,7 +27,7 @@ env:
   UNIXNAME: "bg-serial-studio"
   QML_DIR: "../../app/qml"
   PUBLISHER: "yeclimeric"
-  DESCRIPTION: "多功能串口数据可视化工具"
+  DESCRIPTION: "Multi-purpose serial data visualization & processing program"
   QT_MODULES: qt3d qtgraphs qtquick3d qtlocation qtdatavis3d qtserialport qtshadertools qtpositioning qtconnectivity
     
 #-------------------------------------------------------------------------------
