@@ -48,7 +48,7 @@ option(PRODUCTION_OPTIMIZATION "Enable production optimization flags" OFF)
 # Project information
 #-------------------------------------------------------------------------------
 
-set(PROJECT_DISPNAME            "Serial Studio")
+set(PROJECT_DISPNAME            "BG Serial Studio")
 set(PROJECT_EXECUTABLE          "BG-Serial-Studio")
 set(PROJECT_VENDOR              "yeclimeric")
 set(PROJECT_CONTACT             "")
