@@ -1,0 +1,25 @@
+{
+   "updates":{
+      "windows":{
+         "open-url":"https://github.com/Byte-Grain/BG-SerialStudio/releases/tag/v1.0.0",
+         "latest-version":"1.0.0",
+         "download-url":"https://github.com/Byte-Grain/BG-SerialStudio/releases/download/v1.0.0/Serial-Studio-1.0.0-Windows-x86_64.exe",
+         "changelog":"https://github.com/Byte-Grain/BG-SerialStudio/releases/tag/v1.0.0",
+         "mandatory":false
+      },
+      "osx":{
+         "open-url":"https://github.com/Byte-Grain/BG-SerialStudio/releases/tag/v1.0.0",
+         "latest-version":"1.0.0",
+         "download-url":"https://github.com/Byte-Grain/BG-SerialStudio/releases/download/v1.0.0/Serial-Studio-1.0.0-macOS-arm64.dmg",
+         "changelog":"https://github.com/Byte-Grain/BG-SerialStudio/releases/tag/v1.0.0",
+         "mandatory":false
+      },
+      "linux":{
+         "open-url":"https://github.com/Byte-Grain/BG-SerialStudio/releases/tag/v1.0.0",
+         "latest-version":"1.0.0",
+         "download-url":"https://github.com/Byte-Grain/BG-SerialStudio/releases/download/v3.0.5/Serial-Studio-1.0.0-Linux-x86_64.AppImage",
+         "changelog":"https://github.com/Byte-Grain/BG-SerialStudio/releases/tag/v1.0.0",
+         "mandatory":false
+      }
+   }
+}
