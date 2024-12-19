@@ -302,9 +302,7 @@ jobs:
   upload:
       name: '🗂 Create release and upload artifacts'
       needs:
-        # - build-mac-universal
         - build-windows-x86_64
-        # - build-linux-x86_64
       runs-on: ubuntu-latest
       steps:
       - name: '📥 Download artifacts'
