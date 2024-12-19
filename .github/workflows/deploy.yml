@@ -308,7 +308,7 @@ jobs:
       - name: '📥 Download artifacts'
         uses: actions/download-artifact@v4
       - name: '🗂 Inspect directory after downloading artifacts'
-        run: ls -alFR
+        # run: ls -alFR
       - name: '🚀 Create release and upload artifacts'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -316,5 +316,6 @@ jobs:
             sudo apt-get update
             sudo apt-get install libfuse2
             wget -q https://github.com/TheAssassin/pyuploadtool/releases/download/continuous/pyuploadtool-x86_64.AppImage
-            chmod +x pyuploadtool-x86_64.AppImage     
+            chmod +x pyuploadtool-x86_64.AppImage  
+
             ./pyuploadtool-x86_64.AppImage **/${{env.EXECUTABLE}}-${{env.VERSION}}-Windows-x86_64.msi
