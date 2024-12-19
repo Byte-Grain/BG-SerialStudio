@@ -52,6 +52,7 @@ jobs:
         modules: ${{env.QT_MODULES}}
         cache: true
         install-deps: 'true'
+        qmake-env: true  # Add this parameter
 
     - name: '⚙️ Install dependencies'
       run: |
