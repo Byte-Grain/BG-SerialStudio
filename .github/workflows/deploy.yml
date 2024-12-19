@@ -40,119 +40,119 @@ jobs:
   #
   # Linux build
   #
-  build-linux-x86_64:
-    runs-on: ubuntu-22.04
-    name: '🐧 Linux (x86_64)'
-    steps:
-    - name: '🧰 Checkout'
-      uses: actions/checkout@v4
+  # build-linux-x86_64:
+  #   runs-on: ubuntu-22.04
+  #   name: '🐧 Linux (x86_64)'
+  #   steps:
+  #   - name: '🧰 Checkout'
+  #     uses: actions/checkout@v4
       
-    - name: '⚙️ Install Qt'
-      uses: jurplel/install-qt-action@v4
-      with:
-        version: ${{env.QT_VERSION_LINUX}}
-        modules: ${{env.QT_MODULES}}
-        cache: true
-        install-deps: 'true'
-        qmake-env: true  # Add this parameter
+  #   - name: '⚙️ Install Qt'
+  #     uses: jurplel/install-qt-action@v4
+  #     with:
+  #       version: ${{env.QT_VERSION_LINUX}}
+  #       modules: ${{env.QT_MODULES}}
+  #       cache: true
+  #       install-deps: 'true'
+  #       qmake-env: true  # Add this parameter
 
-    - name: '⚙️ Install dependencies'
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-        libcups2-dev \
-        libgl1-mesa-dev \
-        libxkbcommon-x11-0 \
-        libxcb-icccm4 \
-        libxcb-image0 \
-        libxcb-keysyms1 \
-        libxcb-render-util0 \
-        libxcb-xinerama0 \
-        libzstd-dev \
-        libxcb-image0-dev \
-        libxcb-util0-dev \
-        libxcb-cursor-dev \
-        libssl-dev \
-        libudev-dev \
-        rpm \
-        libfuse2 \
-        fakeroot
+  #   - name: '⚙️ Install dependencies'
+  #     run: |
+  #       sudo apt-get update
+  #       sudo apt-get install -y \
+  #       libcups2-dev \
+  #       libgl1-mesa-dev \
+  #       libxkbcommon-x11-0 \
+  #       libxcb-icccm4 \
+  #       libxcb-image0 \
+  #       libxcb-keysyms1 \
+  #       libxcb-render-util0 \
+  #       libxcb-xinerama0 \
+  #       libzstd-dev \
+  #       libxcb-image0-dev \
+  #       libxcb-util0-dev \
+  #       libxcb-cursor-dev \
+  #       libssl-dev \
+  #       libudev-dev \
+  #       rpm \
+  #       libfuse2 \
+  #       fakeroot
         
-    - name: '⚙️ Install CMake'
-      uses: lukka/get-cmake@latest
-      with:
-        useLocalCache: true
+  #   - name: '⚙️ Install CMake'
+  #     uses: lukka/get-cmake@latest
+  #     with:
+  #       useLocalCache: true
 
-    - name: '⚙️ Install Intel Compiler'
-      uses: fortran-lang/setup-fortran@v1
-      with:
-        compiler: intel
-        version: 2024.1
+  #   - name: '⚙️ Install Intel Compiler'
+  #     uses: fortran-lang/setup-fortran@v1
+  #     with:
+  #       compiler: intel
+  #       version: 2024.1
 
-    - name: '🚧 Configure with CMake'
-      run: |
-        mkdir build
-        cd build
-        cmake ../ -DCMAKE_CXX_COMPILER=icpx -DCMAKE_C_COMPILER=icx -DPRODUCTION_OPTIMIZATION=ON -DCMAKE_BUILD_TYPE=Release
+  #   - name: '🚧 Configure with CMake'
+  #     run: |
+  #       mkdir build
+  #       cd build
+  #       cmake ../ -DCMAKE_CXX_COMPILER=icpx -DCMAKE_C_COMPILER=icx -DPRODUCTION_OPTIMIZATION=ON -DCMAKE_BUILD_TYPE=Release
 
-    - name: '🚧 Build application'
-      run: |
-        cd build
-        cmake --build . --config Release -j 16
+  #   - name: '🚧 Build application'
+  #     run: |
+  #       cd build
+  #       cmake --build . --config Release -j 16
 
-    - name: '📦 Create AppImage'
-      run: |
-        cd "build/app"
-        wget https://github.com/dantti/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-        wget https://github.com/dantti/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
-        chmod +x linuxdeploy-x86_64.AppImage
-        chmod +x linuxdeploy-plugin-qt-x86_64.AppImage
+  #   - name: '📦 Create AppImage'
+  #     run: |
+  #       cd "build/app"
+  #       wget https://github.com/dantti/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+  #       wget https://github.com/dantti/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+  #       chmod +x linuxdeploy-x86_64.AppImage
+  #       chmod +x linuxdeploy-plugin-qt-x86_64.AppImage
         
-        export QML_SOURCES_PATHS="${{env.QML_DIR}}"
-        export QMAKE=/home/runner/work/${{env.EXECUTABLE}}/Qt/${{env.QT_VERSION_LINUX}}/gcc_64/bin/qmake
-        export PATH=/home/runner/work/${{env.EXECUTABLE}}/Qt/${{env.QT_VERSION_LINUX}}/gcc_64/libexec:$PATH
+  #       export QML_SOURCES_PATHS="${{env.QML_DIR}}"
+  #       export QMAKE=/home/runner/work/${{env.EXECUTABLE}}/Qt/${{env.QT_VERSION_LINUX}}/gcc_64/bin/qmake
+  #       export PATH=/home/runner/work/${{env.EXECUTABLE}}/Qt/${{env.QT_VERSION_LINUX}}/gcc_64/libexec:$PATH
         
-        ./linuxdeploy-x86_64.AppImage --appdir AppDir -e ${{env.UNIXNAME}} -i ../../app/deploy/linux/${{env.UNIXNAME}}.png -d ../../app/deploy/linux/${{env.UNIXNAME}}.desktop --plugin qt --output appimage
+  #       ./linuxdeploy-x86_64.AppImage --appdir AppDir -e ${{env.UNIXNAME}} -i ../../app/deploy/linux/${{env.UNIXNAME}}.png -d ../../app/deploy/linux/${{env.UNIXNAME}}.desktop --plugin qt --output appimage
         
-        rm linuxdeploy-x86_64.AppImage
-        rm linuxdeploy-plugin-qt-x86_64.AppImage
+  #       rm linuxdeploy-x86_64.AppImage
+  #       rm linuxdeploy-plugin-qt-x86_64.AppImage
         
-        mv *.AppImage ../../${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.AppImage
+  #       mv *.AppImage ../../${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.AppImage
 
-    - name: '📦 Create Native Packages'
-      run: |
-        cd "build/app"
+  #   - name: '📦 Create Native Packages'
+  #     run: |
+  #       cd "build/app"
 
-        export LDNP_DESCRIPTION="${{env.DESCRIPTION}}"
-        wget https://github.com/linuxdeploy/linuxdeploy-plugin-native_packages/releases/download/continuous/linuxdeploy-plugin-native_packages-x86_64.AppImage
-        chmod +x linuxdeploy-plugin-native_packages-x86_64.AppImage
+  #       export LDNP_DESCRIPTION="${{env.DESCRIPTION}}"
+  #       wget https://github.com/linuxdeploy/linuxdeploy-plugin-native_packages/releases/download/continuous/linuxdeploy-plugin-native_packages-x86_64.AppImage
+  #       chmod +x linuxdeploy-plugin-native_packages-x86_64.AppImage
         
-        fakeroot ./linuxdeploy-plugin-native_packages-x86_64.AppImage --appdir AppDir --build deb
-        fakeroot ./linuxdeploy-plugin-native_packages-x86_64.AppImage --appdir AppDir --build rpm
+  #       fakeroot ./linuxdeploy-plugin-native_packages-x86_64.AppImage --appdir AppDir --build deb
+  #       fakeroot ./linuxdeploy-plugin-native_packages-x86_64.AppImage --appdir AppDir --build rpm
         
-        rm -rf AppDir
-        rm linuxdeploy-plugin-native_packages-x86_64.AppImage
+  #       rm -rf AppDir
+  #       rm linuxdeploy-plugin-native_packages-x86_64.AppImage
         
-        mv *.deb ../../${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.deb
-        mv *.rpm ../../${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.rpm
+  #       mv *.deb ../../${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.deb
+  #       mv *.rpm ../../${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.rpm
           
-    - name: '📤 Upload artifact: AppImage'
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.AppImage
-        path: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.AppImage
+  #   - name: '📤 Upload artifact: AppImage'
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.AppImage
+  #       path: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.AppImage
 
-    - name: '📤 Upload artifact: Debian Package'
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.deb
-        path: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.deb
+  #   - name: '📤 Upload artifact: Debian Package'
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.deb
+  #       path: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.deb
 
-    - name: '📤 Upload artifact: RPM Package'
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.rpm
-        path: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.rpm
+  #   - name: '📤 Upload artifact: RPM Package'
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.rpm
+  #       path: ${{env.EXECUTABLE}}-${{env.VERSION}}-Linux-x86_64.rpm
 
   #
   # macOS build
