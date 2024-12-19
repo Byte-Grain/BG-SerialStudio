@@ -1,8 +1,10 @@
-▒█▀▀▀█ ▒█▀▀▀ ▒█▀▀█ ▀█▀ ░█▀▀█ ▒█░░░ 　 ▒█▀▀▀█ ▀▀█▀▀ ▒█░▒█ ▒█▀▀▄ ▀█▀ ▒█▀▀▀█
-░▀▀▀▄▄ ▒█▀▀▀ ▒█▄▄▀ ▒█░ ▒█▄▄█ ▒█░░░ 　 ░▀▀▀▄▄ ░▒█░░ ▒█░▒█ ▒█░▒█ ▒█░ ▒█░░▒█
-▒█▄▄▄█ ▒█▄▄▄ ▒█░▒█ ▄█▄ ▒█░▒█ ▒█▄▄█ 　 ▒█▄▄▄█ ░▒█░░ ░▀▄▄▀ ▒█▄▄▀ ▄█▄ ▒█▄▄▄█
+    ____   ______   _____              _         __   _____  __              __ _      
+   / __ ) / ____/  / ___/ ___   _____ (_)____ _ / /  / ___/ / /_ __  __ ____/ /(_)____ 
+  / __  |/ / __    \__ \ / _ \ / ___// // __ `// /   \__ \ / __// / / // __  // // __ \
+ / /_/ // /_/ /   ___/ //  __// /   / // /_/ // /   ___/ // /_ / /_/ // /_/ // // /_/ /
+/_____/ \____/   /____/ \___//_/   /_/ \__,_//_/   /____/ \__/ \__,_/ \__,_//_/ \____/ 
 
-Bienvenue sur Serial Studio ! Pour commencer :
+Bienvenue sur BG Serial Studio ! Pour commencer :
 1. Sélectionnez un port COM et un débit en bauds dans le volet des
    dispositifs à droite.
 2. Si la connexion série est réussie et que les données sont correctement
@@ -13,10 +15,10 @@ Utilisez les boutons de la barre d'outils pour accéder aux fonctionnalités don
 vous avez besoin.
 
 Si vous rencontrez des problèmes, veuillez les signaler ici :
-→ https://github.com/Serial-Studio/Serial-Studio/issues
+→ https://github.com/Byte-Grain/BG-SerialStudio/issues
 
 Pour des ressources supplémentaires, y compris la documentation et l'intégration
 avec vos projets embarqués, visitez le wiki :
-→ https://github.com/Serial-Studio/Serial-Studio/wiki
+→ https://github.com/Byte-Grain/BG-SerialStudio/wiki
 
 Astuce : Utilisez l’Éditeur de Projet pour créer et modifier des projets.

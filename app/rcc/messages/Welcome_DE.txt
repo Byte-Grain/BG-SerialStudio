@@ -1,8 +1,10 @@
-▒█▀▀▀█ ▒█▀▀▀ ▒█▀▀█ ▀█▀ ░█▀▀█ ▒█░░░ 　 ▒█▀▀▀█ ▀▀█▀▀ ▒█░▒█ ▒█▀▀▄ ▀█▀ ▒█▀▀▀█
-░▀▀▀▄▄ ▒█▀▀▀ ▒█▄▄▀ ▒█░ ▒█▄▄█ ▒█░░░ 　 ░▀▀▀▄▄ ░▒█░░ ▒█░▒█ ▒█░▒█ ▒█░ ▒█░░▒█
-▒█▄▄▄█ ▒█▄▄▄ ▒█░▒█ ▄█▄ ▒█░▒█ ▒█▄▄█ 　 ▒█▄▄▄█ ░▒█░░ ░▀▄▄▀ ▒█▄▄▀ ▄█▄ ▒█▄▄▄█
+    ____   ______   _____              _         __   _____  __              __ _      
+   / __ ) / ____/  / ___/ ___   _____ (_)____ _ / /  / ___/ / /_ __  __ ____/ /(_)____ 
+  / __  |/ / __    \__ \ / _ \ / ___// // __ `// /   \__ \ / __// / / // __  // // __ \
+ / /_/ // /_/ /   ___/ //  __// /   / // /_/ // /   ___/ // /_ / /_/ // /_/ // // /_/ /
+/_____/ \____/   /____/ \___//_/   /_/ \__,_//_/   /____/ \__/ \__,_/ \__,_//_/ \____/ 
 
-Willkommen bei Serial Studio! So fangen Sie an:
+Willkommen bei BG Serial Studio! So fangen Sie an:
 1. Wählen Sie einen COM-Port und eine Baudrate im Gerätebereich rechts aus.
 2. Wenn die serielle Verbindung erfolgreich ist und die Daten korrekt
    interpretiert werden, schließt sich dieser Bereich automatisch und das
@@ -14,10 +16,10 @@ Verwenden Sie die Schaltflächen in der Symbolleiste, um auf die gewünschten
 Funktionen zuzugreifen.
 
 Wenn Sie auf ein Problem stoßen, melden Sie es bitte hier:
-→ https://github.com/Serial-Studio/Serial-Studio/issues
+→ https://github.com/Byte-Grain/BG-SerialStudio/issues
 
 Für weitere Ressourcen, einschließlich Dokumentation und Integration mit Ihren
 Embedded-Projekten, besuchen Sie das Wiki:
-→ https://github.com/Serial-Studio/Serial-Studio/wiki
+→ https://github.com/Byte-Grain/BG-SerialStudio/wiki
 
 Tipp: Verwenden Sie den Projekteditor, um Projektdateien zu erstellen und anzupassen.

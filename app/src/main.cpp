@@ -82,7 +82,9 @@ int main(int argc, char **argv)
 
   // Windows specific initialization code
 #ifdef Q_OS_WIN
+#ifdef QT_NO_DEBUG
   attachToConsole();
+#endif
   argv = adjustArgumentsForFreeType(argc, argv);
 #endif
 

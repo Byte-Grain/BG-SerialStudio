@@ -275,32 +275,32 @@ Rectangle {
     //
     // Examples
     //
-    Widgets.BigButton {
-      text: qsTr("Examples")
-      Layout.alignment: Qt.AlignVCenter
-      icon.source: "qrc:/rcc/icons/toolbar/examples.svg"
-      onClicked: Qt.openUrlExternally("https://github.com/Serial-Studio/Serial-Studio/tree/master/examples")
-    }
+    // Widgets.BigButton {
+    //   text: qsTr("Examples")
+    //   Layout.alignment: Qt.AlignVCenter
+    //   icon.source: "qrc:/rcc/icons/toolbar/examples.svg"
+    //   onClicked: Qt.openUrlExternally("https://github.com/Serial-Studio/Serial-Studio/tree/master/examples")
+    // }
 
     //
     // Help
     //
-    Widgets.BigButton {
-      text: qsTr("Help")
-      Layout.alignment: Qt.AlignVCenter
-      icon.source: "qrc:/rcc/icons/toolbar/help.svg"
-      onClicked: Qt.openUrlExternally("https://github.com/Serial-Studio/Serial-Studio/wiki")
-    }
+    // Widgets.BigButton {
+    //   text: qsTr("Help")
+    //   Layout.alignment: Qt.AlignVCenter
+    //   icon.source: "qrc:/rcc/icons/toolbar/help.svg"
+    //   onClicked: Qt.openUrlExternally("https://github.com/Serial-Studio/Serial-Studio/wiki")
+    // }
 
     //
     // About
     //
-    Widgets.BigButton {
-      text: qsTr("About")
-      onClicked: app.showAboutDialog()
-      Layout.alignment: Qt.AlignVCenter
-      icon.source: "qrc:/rcc/icons/toolbar/about.svg"
-    }
+    // Widgets.BigButton {
+    //   text: qsTr("About")
+    //   onClicked: app.showAboutDialog()
+    //   Layout.alignment: Qt.AlignVCenter
+    //   icon.source: "qrc:/rcc/icons/toolbar/about.svg"
+    // }
 
     //
     // Horizontal spacer
